@@ -1,4 +1,4 @@
-# sesac_challenge
+# Save the Princess Challenges
 
 Solutions in Ruby for the following problems: 
 1. [Save Princess](https://www.hackerrank.com/challenges/saveprincess)
