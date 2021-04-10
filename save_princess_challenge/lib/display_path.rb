@@ -9,6 +9,9 @@ class DisplayPath
     return ""
   end
 
+  def find_center(n)
+    [n/2, n/2]
+  end
 
   def run
     m = gets.to_i
