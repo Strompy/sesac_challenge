@@ -5,7 +5,11 @@ class DisplayPath
   def displayPathtoPrincess(n,grid)
     m_y_coord, m_x_coord = find_center(n)
     p_y_coord, p_x_coord = find_princess(n, grid)
-  
+    moves = []
+    until m_x_coord == p_x_coord && m_y_coord == p_y_coord
+      
+    end
+    p moves.join('\n')
   end
 
   def find_center(n)
