@@ -12,4 +12,15 @@ class DisplayPathTest < Minitest::Test
     assert_equal [2, 2], @display_path.find_center(5)
   end
 
+  def test_it_can_find_princess
+    grid = ['---', '-m-', 'p--']
+    assert_equal [2, 0], @display_path.find_princess(3, grid)
+
+    grid2 = ['----p', '--m--', '-----']
+    assert_equal [0, 4], @display_path.find_princess(5, grid2)
+  end
+
+  # def test_it_can_display_path_to_princess
+  #   assert_equal "DOWN\nLEFT", @display_path.displayPathtoPrincess
+  # end
 end
