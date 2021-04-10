@@ -1,15 +1,27 @@
 #!/bin/ruby
+class DisplayPath
+  def initialize; end
 
-def displayPathtoPrincess(n,grid)
-  return ""
+  def displayPathtoPrincess(n,grid)
+    require "pry"; binding.pry
+    m_x_coord, m_y_coord = find_center(n)
+
+    return ""
+  end
+
+
+  def run
+    m = gets.to_i
+
+    grid = Array.new(m)
+
+    (0...m).each do |i|
+        grid[i] = gets.strip
+    end
+    displayPathtoPrincess(m,grid)
+  end
 end
 
-m = gets.to_i
 
-grid = Array.new(m)
 
-(0...m).each do |i|
-    grid[i] = gets.strip
-end
-
-displayPathtoPrincess(m,grid)
+# DisplayPath.new.run
