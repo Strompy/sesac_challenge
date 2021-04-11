@@ -3,44 +3,44 @@ class Bot
   def initialize; end
 
   def nextMove(n,r,c,grid)
+    p_r, p_c = find_princess(grid)
     puts "0 0"
   end
 
-  def displayPathtoPrincess(n,grid)
-    m_y_coord, m_x_coord = find_center(n)
-    p_y_coord, p_x_coord = find_princess(n, grid)
-    moves = []
-    until m_x_coord == p_x_coord && m_y_coord == p_y_coord
-      if p_y_coord == 0
-        m_y_coord -= 1
-        moves.push 'UP'
-      else
-        m_y_coord += 1
-        moves.push 'DOWN'
-      end
-      if p_x_coord == 0
-        m_x_coord -= 1
-        moves.push 'LEFT'
-      else
-        m_x_coord += 1
-        moves.push 'RIGHT'
-      end
+  def find_princess(grid)
+    col = nil
+    row = 0
+    grid.each_with_index do |r, index|
+      row = index
+      col = r.index('p')
+      break if col != nil
     end
-    p moves.join('\n')
+    [row, col]
   end
 
+  # def displayPathtoPrincess(n,grid)
+  #   m_y_coord, m_x_coord = find_center(n)
+  #   p_y_coord, p_x_coord = find_princess(n, grid)
+  #   moves = []
+  #   until m_x_coord == p_x_coord && m_y_coord == p_y_coord
+  #     if p_y_coord == 0
+  #       m_y_coord -= 1
+  #       moves.push 'UP'
+  #     else
+  #       m_y_coord += 1
+  #       moves.push 'DOWN'
+  #     end
+  #     if p_x_coord == 0
+  #       m_x_coord -= 1
+  #       moves.push 'LEFT'
+  #     else
+  #       m_x_coord += 1
+  #       moves.push 'RIGHT'
+  #     end
+  #   end
+  #   p moves.join('\n')
+  # end
 
-  def find_princess(n, grid)
-    if grid[0][0] == 'p'
-      [0, 0]
-    elsif grid[0][n-1] == 'p'
-      [0, n-1]
-    elsif grid[n-1][0] == 'p'
-      [n-1, 0]
-    else
-      [n-1, n-1]
-    end
-  end
 
   def run
     n = gets.to_i
