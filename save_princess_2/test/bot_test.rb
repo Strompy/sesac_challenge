@@ -26,6 +26,6 @@ class DisplayPathTest < Minitest::Test
 
     grid2 = ['---p', '----', '--m-', '----']
     n, r, c = 4, 2, 2
-    assert_equal "UP", @bot.nextMove(n, r, c, grid)
+    assert_equal "UP", @bot.nextMove(n, r, c, grid2)
   end
 end
