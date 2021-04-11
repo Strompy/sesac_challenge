@@ -52,7 +52,3 @@ class DisplayPath
     displayPathtoPrincess(m,grid)
   end
 end
-
-
-
-# DisplayPath.new.run
