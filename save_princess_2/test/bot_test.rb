@@ -28,8 +28,8 @@ class DisplayPathTest < Minitest::Test
     n, r, c = 4, 2, 2
     assert_equal "UP", @bot.nextMove(n, r, c, grid2)
 
-    grid2 = ['-----', '-----', '----p', '-m---', '-----']
+    grid3 = ['-----', '-----', '----p', '-m---', '-----']
     n, r, c = 5, 3, 1
-    assert_equal "UP", @bot.nextMove(n, r, c, grid2)
+    assert_equal "UP", @bot.nextMove(n, r, c, grid3)
   end
 end
