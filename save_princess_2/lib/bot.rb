@@ -7,16 +7,16 @@ class Bot
     # require "pry"; binding.pry
     if r < p_r
       r += 1
-      "DOWN"
+      p "DOWN"
     elsif r > p_r
       r -= 1
-      "UP"
+      p "UP"
     elsif c < p_c
       c += 1
-      "RIGHT"
+      p "RIGHT"
     elsif c > p_c
       c -= 1
-      "LEFT"
+      p "LEFT"
     end
   end
 
