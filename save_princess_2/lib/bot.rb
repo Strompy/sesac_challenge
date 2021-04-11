@@ -6,13 +6,13 @@ class Bot
     p_r, p_c = find_princess(grid)
 
     if r < p_r
-     "DOWN"
+      "DOWN"
     elsif r > p_r
-     "UP"
+      "UP"
     elsif c < p_c
-     "RIGHT"
+      "RIGHT"
     elsif c > p_c
-     "LEFT"
+      "LEFT"
     end
   end
 
