@@ -15,8 +15,7 @@ cd sesac_challenge
 
 
 ## Testing
-This project utilizes [Minitest](https://github.com/seattlerb/minitest)
-It is included in the Ruby standard library for this version
+This project utilizes [Minitest](https://github.com/seattlerb/minitest) which is included in the Ruby standard library for this version
 
 If needed install from the command line:
 `$ gem install minitest`
