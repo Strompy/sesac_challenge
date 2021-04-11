@@ -4,19 +4,15 @@ class Bot
 
   def nextMove(n,r,c,grid)
     p_r, p_c = find_princess(grid)
-    # require "pry"; binding.pry
+
     if r < p_r
-      r += 1
-      p "DOWN"
+     "DOWN"
     elsif r > p_r
-      r -= 1
-      p "UP"
+     "UP"
     elsif c < p_c
-      c += 1
-      p "RIGHT"
+     "RIGHT"
     elsif c > p_c
-      c -= 1
-      p "LEFT"
+     "LEFT"
     end
   end
 
@@ -43,6 +39,6 @@ class Bot
         grid[i] = gets
     end
 
-    nextMove(n,r,c,grid)
+    print nextMove(n,r,c,grid)
   end
 end
