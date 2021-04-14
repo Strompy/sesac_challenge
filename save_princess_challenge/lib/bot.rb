@@ -3,22 +3,22 @@ class Bot
   def initialize; end
 
   def solve(n,grid)
-    m_y_coord, m_x_coord = find_center(n)
-    p_y_coord, p_x_coord = find_princess(n, grid)
+    bot_row, bot_col = find_center(n)
+    princess_row, princess_col = find_princess(n, grid)
     moves = []
-    until m_x_coord == p_x_coord && m_y_coord == p_y_coord
-      if p_y_coord == 0
-        m_y_coord -= 1
+    until bot_col == princess_col && bot_row == princess_row
+      if princess_row == 0
+        bot_row -= 1
         moves.push 'UP'
       else
-        m_y_coord += 1
+        bot_row += 1
         moves.push 'DOWN'
       end
-      if p_x_coord == 0
-        m_x_coord -= 1
+      if princess_col == 0
+        bot_col -= 1
         moves.push 'LEFT'
       else
-        m_x_coord += 1
+        bot_col += 1
         moves.push 'RIGHT'
       end
     end
