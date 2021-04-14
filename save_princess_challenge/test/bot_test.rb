@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/display_path'
+require './lib/bot'
 
-class DisplayPathTest < Minitest::Test
+class BotTest < Minitest::Test
   def setup
     @display_path = DisplayPath.new
   end

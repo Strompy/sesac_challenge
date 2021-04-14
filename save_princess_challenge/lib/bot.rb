@@ -1,5 +1,5 @@
 #!/bin/ruby
-class DisplayPath
+class Bot
   def initialize; end
 
   def displayPathtoPrincess(n,grid)
