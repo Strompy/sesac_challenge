@@ -2,7 +2,7 @@
 class Bot
   def initialize; end
 
-  def nextMove(n,r,c,grid)
+  def solve(n,r,c,grid)
     p_r, p_c = find_princess(grid)
 
     if r < p_r
@@ -26,19 +26,10 @@ class Bot
     end
     [row, col]
   end
+end
 
-
-  def run
-    n = gets.to_i
-
-    r,c = gets.strip.split.map {|num| num.to_i}
-
-    grid = Array.new(n)
-
-    (0...n).each do |i|
-        grid[i] = gets
-    end
-
-    print nextMove(n,r,c,grid)
-  end
+# HackerRank function
+def nextMove(n,r,c,grid)
+  bot = Bot.new
+  puts bot.solve(n, r, c, grid)
 end
