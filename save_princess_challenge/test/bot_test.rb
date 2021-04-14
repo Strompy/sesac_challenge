@@ -4,11 +4,19 @@ require './lib/bot'
 
 class BotTest < Minitest::Test
   def setup
-    @bot = Bot.new
+    @grid = ['---', '-m-', 'p--']
+    @n = @grid.size
+    @bot = Bot.new(@n, @grid)
   end
 
   def test_it_exists
     assert_instance_of Bot, @bot
+  end
+
+  def test_it_has_attributes
+    @bot.grid == @grid
+    @bot.bot_row == @n/2
+    @bot.bot_col == @n/2
   end
 
   def test_it_can_find_center
