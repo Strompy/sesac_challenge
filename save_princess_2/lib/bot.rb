@@ -17,8 +17,7 @@ class Bot
   end
 
   def find_princess(grid)
-    col = nil
-    row = 0
+    col, row = nil, nil
     grid.each_with_index do |r, index|
       row = index
       col = r.index('p')
