@@ -22,14 +22,14 @@ class DisplayPathTest < Minitest::Test
   def test_it_can_solve
     n, r, c = 5, 2, 3
     grid = ['-----', '-----', 'p--m-', '-----', '-----']
-    assert_equal "LEFT", @bot.solve(n, r, c, grid)
+    assert_equal "LEFT", @bot.solve_next_move(n, r, c, grid)
 
     grid2 = ['---p', '----', '--m-', '----']
     n, r, c = 4, 2, 2
-    assert_equal "UP", @bot.solve(n, r, c, grid2)
+    assert_equal "UP", @bot.solve_next_move(n, r, c, grid2)
 
     grid3 = ['-----', '-----', '----p', '-m---', '-----']
     n, r, c = 5, 3, 1
-    assert_equal "UP", @bot.solve(n, r, c, grid3)
+    assert_equal "UP", @bot.solve_next_move(n, r, c, grid3)
   end
 end
