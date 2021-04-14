@@ -6,7 +6,7 @@ class Bot
     bot_row, bot_col = find_center(n)
     princess_row, princess_col = find_princess(n, grid)
     moves = []
-    until bot_col == princess_col && bot_row == princess_row
+    until [bot_col, bot_row] == [princess_col, princess_row]
       if princess_row == 0
         bot_row -= 1
         moves.push 'UP'
@@ -22,7 +22,7 @@ class Bot
         moves.push 'RIGHT'
       end
     end
-    p moves.join('\n')
+    moves.join('\n')
   end
 
   def find_center(n)
