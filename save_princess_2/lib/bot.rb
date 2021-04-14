@@ -2,16 +2,16 @@
 class Bot
   def initialize; end
 
-  def solve(n,r,c,grid)
-    p_r, p_c = find_princess(grid)
+  def solve(n, bot_row, bot_col, grid)
+    princess_row, princess_col = find_princess(grid)
 
-    if r < p_r
+    if bot_row < princess_row
       "DOWN"
-    elsif r > p_r
+    elsif bot_row > princess_row
       "UP"
-    elsif c < p_c
+    elsif bot_col < princess_col
       "RIGHT"
-    elsif c > p_c
+    elsif bot_col > princess_col
       "LEFT"
     end
   end
