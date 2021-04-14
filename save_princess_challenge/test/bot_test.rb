@@ -7,6 +7,10 @@ class BotTest < Minitest::Test
     @bot = Bot.new
   end
 
+  def test_it_exists
+    assert_instance_of Bot, @bot
+  end
+
   def test_it_can_find_center
     assert_equal [1, 1], @bot.find_center(2)
     assert_equal [2, 2], @bot.find_center(5)
