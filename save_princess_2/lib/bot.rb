@@ -5,10 +5,14 @@ class Bot
   def solve(n,r,c,grid)
     p_r, p_c = find_princess(grid)
 
-    if r != p_r
-      r > p_r ? "UP" : "DOWN"
-    elsif c != p_c
-      c > p_c ? "LEFT" : "RIGHT"
+    if r < p_r
+      "DOWN"
+    elsif r > p_r
+      "UP"
+    elsif c < p_c
+      "RIGHT"
+    elsif c > p_c
+      "LEFT"
     end
   end
 
