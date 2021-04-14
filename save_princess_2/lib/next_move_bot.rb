@@ -1,5 +1,5 @@
 #!/bin/ruby
-class Bot
+class NextMoveBot
   def initialize; end
 
   def solve(n, bot_row, bot_col, grid)
@@ -29,6 +29,6 @@ end
 
 # HackerRank function
 def nextMove(n,r,c,grid)
-  bot = Bot.new
+  bot = NextMoveBot.new
   puts bot.solve(n, r, c, grid)
 end

@@ -1,14 +1,14 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/bot'
+require './lib/next_move_bot'
 
 class DisplayPathTest < Minitest::Test
   def setup
-    @bot = Bot.new
+    @bot = NextMoveBot.new
   end
 
   def test_it_exists
-    assert_instance_of Bot, @bot
+    assert_instance_of NextMoveBot, @bot
   end
 
   def test_it_can_find_princess
