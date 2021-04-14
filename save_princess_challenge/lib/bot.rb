@@ -2,7 +2,7 @@
 class Bot
   def initialize; end
 
-  def displayPathtoPrincess(n,grid)
+  def solve(n,grid)
     m_y_coord, m_x_coord = find_center(n)
     p_y_coord, p_x_coord = find_princess(n, grid)
     moves = []
@@ -40,15 +40,10 @@ class Bot
       [n-1, n-1]
     end
   end
+end
 
-  def run
-    m = gets.to_i
-
-    grid = Array.new(m)
-
-    (0...m).each do |i|
-        grid[i] = gets.strip
-    end
-    displayPathtoPrincess(m,grid)
-  end
+# HackerRank function
+def displayPathtoPrincess(n,grid)
+  bot = Bot.new
+  print bot.solve(n,grid)
 end
