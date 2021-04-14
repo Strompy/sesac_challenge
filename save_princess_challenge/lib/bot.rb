@@ -1,8 +1,8 @@
 #!/bin/ruby
 class Bot
-  def initialize; end
+  def initialize; end # add attributes of each position?
 
-  def solve(n,grid)
+  def solve_grid(n,grid)
     bot_row, bot_col = find_center(n)
     princess_row, princess_col = find_princess(n, grid)
     moves = []
@@ -45,5 +45,5 @@ end
 # HackerRank function
 def displayPathtoPrincess(n,grid)
   bot = Bot.new
-  print bot.solve(n,grid)
+  print bot.solve_grid(n,grid)
 end
