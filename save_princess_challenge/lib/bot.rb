@@ -11,34 +11,23 @@ class Bot
   def solve_grid
     moves = []
     until [bot_col, bot_row] == [princess_col, princess_row]
-      if princess_row == 0
-        @bot_row -= 1
-        moves.push 'UP'
-      else
-        @bot_row += 1
-        moves.push 'DOWN'
-      end
-      if princess_col == 0
-        @bot_col -= 1
-        moves.push 'LEFT'
-      else
-        @bot_col += 1
-        moves.push 'RIGHT'
-      end
+      moves << solve_next_move
     end
     moves.join('\n')
   end
 
-  def solve_next_move(n, bot_row, bot_col, grid)
-    princess_row, princess_col = find_princess(grid)
-
+  def solve_next_move
     if bot_row < princess_row
+      @bot_row += 1
       "DOWN"
     elsif bot_row > princess_row
+      @bot_row -= 1
       "UP"
     elsif bot_col < princess_col
+      @bot_col += 1
       "RIGHT"
     elsif bot_col > princess_col
+      @bot_col -= 1
       "LEFT"
     end
   end
