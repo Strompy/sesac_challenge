@@ -1,5 +1,3 @@
-# Formatted for HackerRank
-
 #!/bin/ruby
 class Bot
   attr_reader :grid, :bot_row, :bot_col, :princess_row, :princess_col
@@ -52,13 +50,3 @@ def displayPathtoPrincess(n,grid)
   bot = Bot.new(n,grid)
   puts bot.solve_grid
 end
-
-m = gets.to_i
-
-grid = Array.new(m)
-
-(0...m).each do |i|
-    grid[i] = gets.strip
-end
-
-displayPathtoPrincess(m,grid)

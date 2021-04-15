@@ -1,5 +1,3 @@
-# Copy and paste the following code hackerrank submission box.
-
 #!/bin/ruby
 class NextMoveBot
   attr_reader :bot_row, :bot_col, :princess_row, :princess_col
@@ -37,15 +35,3 @@ def nextMove(n,r,c,grid)
   bot = NextMoveBot.new(n, r, c, grid)
   puts bot.solve_next_move
 end
-
-n = gets.to_i
-
-r,c = gets.strip.split.map {|num| num.to_i}
-
-grid = Array.new(n)
-
-(0...n).each do |i|
-    grid[i] = gets
-end
-
-nextMove(n,r,c,grid)
