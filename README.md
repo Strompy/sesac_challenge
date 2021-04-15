@@ -24,17 +24,17 @@ If needed install from the command line:
 **Save Princess Challenge**
 1. from root directory
 2. `$ cd save_princess_challenge`
-3. `$ ruby test/display_path_test.rb`
+3. `$ ruby test/bot_test.rb`
 
 **Save Princess 2**
 1. from root directory
 2. `$ cd save_princess_2`
-3. `$ ruby test/bot_test.rb`
+3. `$ ruby test/next_move_bot_test.rb`
 
 ## HackerRank Submission
-To check the solutions on HackerRank, copy and paste the code from 'formatted' files into the HackerRank submission field.
-1. Save Princess solution:
-`./save_princess_challenge/lib/formatted_display_path.rb`
+The class files can be copied directly for HackerRank sumbmission.
 
-2. Save Princess 2 solution:
-`./save_princess_2/lib/formatted_next_move.rb`
+The formatted files include the additional code that HackerRank uses to run the solutions: get standard input, parse into grid, call function.
+
+To check the solutions on HackerRank, copy and paste the code from 'formatted' files into the HackerRank submission field including all the code. Or copy the code from the class files and paste above the prewritten `m = gets.to_i` line in the sumbission field.
+
