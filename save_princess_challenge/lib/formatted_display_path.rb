@@ -1,4 +1,4 @@
-# Formatted for HackerRank
+# Includes all HackerRank code
 
 #!/bin/ruby
 class Bot

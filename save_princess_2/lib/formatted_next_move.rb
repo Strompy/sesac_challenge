@@ -1,4 +1,4 @@
-# Copy and paste the following code hackerrank submission box.
+# Includes all HackerRank code
 
 #!/bin/ruby
 class NextMoveBot
