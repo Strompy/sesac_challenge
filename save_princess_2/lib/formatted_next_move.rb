@@ -1,19 +1,22 @@
 # Copy and paste the following code hackerrank submission box.
 
 #!/bin/ruby
-class Bot
-  def initialize; end
+class NextMoveBot
+  attr_reader :bot_row, :bot_col, :princess_row, :princess_col
 
-  def solve(n,r,c,grid)
-    p_r, p_c = find_princess(grid)
+  def initialize(n,r,c,grid)
+    @bot_row, @bot_col = r, c
+    @princess_row, @princess_col = find_princess(grid)
+  end
 
-    if r < p_r
+  def solve_next_move
+    if bot_row < princess_row
       "DOWN"
-    elsif r > p_r
+    elsif bot_row > princess_row
       "UP"
-    elsif c < p_c
+    elsif bot_col < princess_col
       "RIGHT"
-    elsif c > p_c
+    elsif bot_col > princess_col
       "LEFT"
     end
   end
@@ -31,12 +34,10 @@ end
 
 # HackerRank function
 def nextMove(n,r,c,grid)
-  bot = Bot.new
-  puts bot.solve(n, r, c, grid)
+  bot = NextMoveBot.new(n, r, c, grid)
+  puts bot.solve_next_move
 end
 
-
-# hackerrank runtime code
 n = gets.to_i
 
 r,c = gets.strip.split.map {|num| num.to_i}

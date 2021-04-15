@@ -1,40 +1,56 @@
 # Formatted for HackerRank
 
+#!/bin/ruby
+class Bot
+  attr_reader :grid, :bot_row, :bot_col, :princess_row, :princess_col
+
+  def initialize(n, grid)
+    @grid = grid
+    @bot_row, @bot_col = [n/2, n/2]
+    @princess_row, @princess_col = find_princess(n, grid)
+  end
+
+  def solve_grid
+    moves = []
+    until [bot_col, bot_row] == [princess_col, princess_row]
+      moves << solve_next_move
+    end
+    moves
+  end
+
+  def solve_next_move
+    if bot_row < princess_row
+      @bot_row += 1
+      "DOWN"
+    elsif bot_row > princess_row
+      @bot_row -= 1
+      "UP"
+    elsif bot_col < princess_col
+      @bot_col += 1
+      "RIGHT"
+    elsif bot_col > princess_col
+      @bot_col -= 1
+      "LEFT"
+    end
+  end
+
+  def find_princess(n, grid)
+    if grid[0][0] == 'p'
+      [0, 0]
+    elsif grid[0][n-1] == 'p'
+      [0, n-1]
+    elsif grid[n-1][0] == 'p'
+      [n-1, 0]
+    else
+      [n-1, n-1]
+    end
+  end
+end
+
+# HackerRank function
 def displayPathtoPrincess(n,grid)
-  m_y_coord, m_x_coord = find_center(n)
-  p_y_coord, p_x_coord = find_princess(n, grid)
-  until m_x_coord == p_x_coord && m_y_coord == p_y_coord
-    if p_y_coord == 0
-      m_y_coord -= 1
-      puts 'UP'
-    else
-      m_y_coord += 1
-      puts 'DOWN'
-    end
-    if p_x_coord == 0
-      m_x_coord -= 1
-      puts 'LEFT'
-    else
-      m_x_coord += 1
-      puts 'RIGHT'
-    end
-  end
-end
-
-def find_center(n)
-  [n/2, n/2]
-end
-
-def find_princess(n, grid)
-  if grid[0][0] == 'p'
-    [0, 0]
-  elsif grid[0][n-1] == 'p'
-    [0, n-1]
-  elsif grid[n-1][0] == 'p'
-    [n-1, 0]
-  else
-    [n-1, n-1]
-  end
+  bot = Bot.new(n,grid)
+  puts bot.solve_grid
 end
 
 m = gets.to_i
