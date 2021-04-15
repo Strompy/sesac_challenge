@@ -1,10 +1,13 @@
 #!/bin/ruby
 class NextMoveBot
-  def initialize; end
+  attr_reader :bot_row, :bot_col, :princess_row, :princess_col
 
-  def solve_next_move(n, bot_row, bot_col, grid)
-    princess_row, princess_col = find_princess(grid)
+  def initialize(n,r,c,grid)
+    @bot_row, @bot_col = r, c
+    @princess_row, @princess_col = find_princess(grid)
+  end
 
+  def solve_next_move
     if bot_row < princess_row
       "DOWN"
     elsif bot_row > princess_row
@@ -29,6 +32,6 @@ end
 
 # HackerRank function
 def nextMove(n,r,c,grid)
-  bot = NextMoveBot.new
-  puts bot.solve_next_move(n, r, c, grid)
+  bot = NextMoveBot.new(n, r, c, grid)
+  puts bot.solve_next_move
 end
