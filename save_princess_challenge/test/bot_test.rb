@@ -17,11 +17,8 @@ class BotTest < Minitest::Test
     @bot.grid == @grid
     @bot.bot_row == @n/2
     @bot.bot_col == @n/2
-  end
-
-  def test_it_can_find_center
-    assert_equal [1, 1], @bot.find_center(2)
-    assert_equal [2, 2], @bot.find_center(5)
+    @bot.princess_row == 3
+    @bot.princess_col == 0
   end
 
   def test_it_can_find_princess
@@ -33,9 +30,9 @@ class BotTest < Minitest::Test
   end
 
   def test_it_can_find_path_to_princess
-    grid = ['---', '-m-', 'p--']
-    assert_equal "DOWN\\nLEFT", @bot.solve_grid(grid.size, grid)
-    grid2 = ['----p', '-----', '--m--', '-----', '-----']
-    assert_equal  "UP\\nRIGHT\\nUP\\nRIGHT", @bot.solve_grid(grid2.size, grid2)
+    # grid = ['---', '-m-', 'p--']
+    assert_equal "DOWN\\nLEFT", @bot.solve_grid
+    # grid2 = ['----p', '-----', '--m--', '-----', '-----']
+    # assert_equal  "UP\\nRIGHT\\nUP\\nRIGHT", @bot.solve_grid(grid2.size, grid2)
   end
 end
