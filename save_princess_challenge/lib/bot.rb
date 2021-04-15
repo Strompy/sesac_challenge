@@ -1,37 +1,46 @@
 #!/bin/ruby
 class Bot
-  attr_reader :bot_row, :bot_col, :grid
+  attr_reader :grid, :bot_row, :bot_col, :princess_row, :princess_col
 
   def initialize(n, grid)
-    @bot_row, @bot_col = [n/2, n/2]
     @grid = grid
+    @bot_row, @bot_col = [n/2, n/2]
+    @princess_row, @princess_col = find_princess(n, grid)
   end
 
   def solve_grid
-    bot_row, bot_col = find_center(n)
-    princess_row, princess_col = find_princess(n, grid)
     moves = []
     until [bot_col, bot_row] == [princess_col, princess_row]
       if princess_row == 0
-        bot_row -= 1
+        @bot_row -= 1
         moves.push 'UP'
       else
-        bot_row += 1
+        @bot_row += 1
         moves.push 'DOWN'
       end
       if princess_col == 0
-        bot_col -= 1
+        @bot_col -= 1
         moves.push 'LEFT'
       else
-        bot_col += 1
+        @bot_col += 1
         moves.push 'RIGHT'
       end
     end
     moves.join('\n')
   end
 
-  def find_center(n)
-    [n/2, n/2]
+  def solve_next_move(n, bot_row, bot_col, grid)
+    princess_row, princess_col = find_princess(grid)
+
+    if bot_row < princess_row
+      "DOWN"
+    elsif bot_row > princess_row
+      "UP"
+    elsif bot_col < princess_col
+      "RIGHT"
+    elsif bot_col > princess_col
+      "LEFT"
+    end
   end
 
   def find_princess(n, grid)
