@@ -28,7 +28,7 @@ class DisplayPathTest < Minitest::Test
     assert_equal [0, 4], @bot.find_princess(grid2)
   end
 
-  def test_it_can_solve
+  def test_it_can_solve_next_move
     n, r, c = 5, 2, 3
     grid = ['-----', '-----', 'p--m-', '-----', '-----']
     bot1 = NextMoveBot.new(n, r, c, grid)
