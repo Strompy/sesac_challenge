@@ -36,9 +36,9 @@ class BotTest < Minitest::Test
   end
 
   def test_it_can_find_path_to_princess
-    assert_equal "DOWN\\nLEFT", @bot.solve_grid
+    assert_equal ['DOWN', 'LEFT'], @bot.solve_grid
     grid2 = ['----p', '-----', '--m--', '-----', '-----']
     bot2 = Bot.new(grid2.size, grid2)
-    assert_equal  "UP\\nUP\\nRIGHT\\nRIGHT", bot2.solve_grid
+    assert_equal  ['UP', 'UP', 'RIGHT', 'RIGHT'], bot2.solve_grid
   end
 end

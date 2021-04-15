@@ -13,7 +13,7 @@ class Bot
     until [bot_col, bot_row] == [princess_col, princess_row]
       moves << solve_next_move
     end
-    moves.join('\n')
+    moves
   end
 
   def solve_next_move
@@ -48,5 +48,5 @@ end
 # HackerRank function
 def displayPathtoPrincess(n,grid)
   bot = Bot.new(n,grid)
-  print bot.solve_grid
+  puts bot.solve_grid
 end
